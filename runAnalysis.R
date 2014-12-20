@@ -39,3 +39,6 @@ data2$activity<-factor(data2$activity, labels=activitynames)
 
 # new dataframe with average of each variable grouped by subject/activity.
 tidy<-aggregate(. ~ subject + activity, data2, mean)
+
+# write dataframe to text file
+write.table(tidy, file="tidy.txt", row.name=FALSE)
